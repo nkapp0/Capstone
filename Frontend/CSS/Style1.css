@@ -128,6 +128,7 @@ main {
 .category-listing {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -140,6 +141,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 }
 .category-item:hover {
     transform: translateY(-5px);
