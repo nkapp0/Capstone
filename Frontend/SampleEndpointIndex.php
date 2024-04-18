@@ -15,9 +15,32 @@
   <body>
     <h1>Mizzou101</h1>
 <p>Team Azul</p>
-
+	  
+<a href="testfiles/MapOverlay.html">TestLink</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	  <h1>Atlas Mongo Database Viewer</h1>
+	  <script>
+        async function addRank() {
+            const _id = '1';
+            try {
+                const response = await fetch(`https://nodejs.mizzou101.com/api/data/FoodDrink/${_id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ rank: 1 }) // Increase rank by 1
+                });
+                const data = await response.json();
+                console.log(data); // Log the response from the server
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+	  <button onclick="addRank()">
+		  Add rank test
+	  </button>
+	  
     <ul id="nameList"></ul>
 
     <script>
@@ -46,3 +69,4 @@
 </html>
 
 <?php wp_footer(); ?>
+
