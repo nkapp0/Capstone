@@ -55,15 +55,11 @@ background-size: cover; background-position: center; background-attachment: fixe
             </div>
         </section>
 
-        <section>
-            <div class="search-list-container">
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Search...">
-                </div>
-                <div class="search-results-container">
-                    <div id="searchResults" class="list-box">
-                        <!-- All items with images and text will be displayed here -->
-                    </div>
+        <section id="food-and-drink" class="category-section">
+            <h2 class="category-title">Food And Drinks</h2>
+            <div class="category-listing" id="food-drink-listing">
+                <!-- Dynamic content will be injected here -->
+            </div>
         </section>
 
  
@@ -73,6 +69,37 @@ background-size: cover; background-position: center; background-attachment: fixe
     <footer>
         <p>&copy; 2024 Mizzou 101. All rights reserved. Team Azul.</p>
     </footer>
-    <script src="../../HTMLCSS Testing/script.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            fetchFoodAndDrinkData();
+        });
+    
+        function fetchFoodAndDrinkData() {
+            fetch('https://nodejs.mizzou101.com/api/data/FoodDrink')
+                .then(response => response.json())
+                .then(data => {
+                    const listingContainer = document.getElementById('food-drink-listing');
+                    listingContainer.innerHTML = ''; // Clear previous content
+    
+                    // Create HTML for each item and append to the listing container
+                    data.forEach(item => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'category-item';
+                        itemDiv.innerHTML = `
+                            <a href="DetailPage.html?id=${item._id}"> <!-- Assuming each item has a unique identifier -->
+                                <img src="${item.imageUrl}" alt="${item.name}" class="logo">
+                                <p>${item.name}</p>
+                            </a>
+                        `;
+                        listingContainer.appendChild(itemDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching Food and Drink data:', error);
+                    listingContainer.innerHTML = '<p>Error loading data. Please try again later.</p>';
+                });
+        }
+    </script>
+    
 </body>
 </html>
