@@ -48,3 +48,19 @@ app.put('/api/data/:collection/:id', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+app.get('/api/search', (req, res) => {
+  const query = req.query.query;
+  db.collection('items').find({
+      $or: [
+          { Name: { $regex: query, $options: 'i' } },
+          { Tags: { $regex: query, $options: 'i' } }
+      ]
+  }).toArray((err, docs) => {
+      if (err) {
+          res.status(500).send('Error searching items');
+          return;
+      }
+      res.json(docs);
+  });
+});

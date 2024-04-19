@@ -109,10 +109,14 @@ main {
 }
 
 .introduction {
-    margin: 2rem 0;
+    margin: 4rem;
+    padding: 20px;
     text-align: center;
     font-size: larger;
     margin-bottom: 100px;
+}
+.spacer {
+    margin: 20px 0; /* Adds vertical space above and below the element */
 }
 
 .category-section {
@@ -133,11 +137,11 @@ main {
 }
 
 .category-item {
-    background-color: white; /* Mizzou Gold for the item background */
-    width: 400px; /* Adjust width as necessary */
+    background-color: white; 
+    width: 350px; /* Adjust width as necessary */
     padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -219,4 +223,25 @@ footer {
     padding: 0.5rem;
     background-color: var(--mizzou-gold); /* Mizzou Gold for the title background */
     color: var(--mizzou-black); /* Mizzou Black for the title text */
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.search-result-img {
+    width: 100px; 
+    height: auto;
+    margin-right: 20px;
+}
+
+.search-result-item div h4 {
+    margin: 0;
+    color: var(--mizzou-gold);
+}
+
+.search-result-item div p {
+    margin: 0;
 }

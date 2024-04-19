@@ -24,7 +24,7 @@ background-size: cover; background-position: center; background-attachment: fixe
                     <a href="#outdoor-activities">Outdoor Activities</a>
                 </div>
                 <div class="search-container">
-                    <input type="search" placeholder="Search...">
+                    <input type="search" id="searchInput" placeholder="Search..." oninput="performSearch()">
                 </div>
             </nav>
         </div>
@@ -33,32 +33,24 @@ background-size: cover; background-position: center; background-attachment: fixe
     <main>
         <section class="introduction">
             <h1>Welcome to the Food and Drink Page</h1>
-            <p>Discover the many great and diverse food options that Columbia has to offer.</p>
+            <p>Discover the many great and diverse food options that Columbia has to offer. 
+                Ranging from On Campus, Downtown Columbia, and all the bars Columbia has to offer.</p>
         </section>
 
         <!-- Food and Drink Section -->
-        <section id="food-and-drink" class="category-section">
-            <h2 class="category-title">Food And Drinks</h2>
-            <div class="category-listing">
-                <div class="category-item">
-                    <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                    <p>Place 1</p>
-                </div>
-                <div class="category-item">
-                    <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                    <p>Place 2</p>
-                </div>
-                <div class="category-item">
-                    <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                    <p>Place 3</p>
-                </div>
+        <!-- Food and Drink - Top 3 Spots -->
+        <section id="top-spots" class="category-section">
+            <h2 class="category-title">Top 3 Spots</h2>
+            <div class="category-listing" id="top-spots-listing">
+                <!-- Top 3 spots will be injected here -->
             </div>
         </section>
 
-        <section id="food-and-drink" class="category-section">
-            <h2 class="category-title">Food And Drinks</h2>
-            <div class="category-listing" id="food-drink-listing">
-                <!-- Dynamic content will be injected here -->
+        <!-- Food and Drink - Full Listing -->
+        <section id="all-food-drink" class="category-section">
+            <h2 class="category-title">All Food And Drinks</h2>
+            <div class="category-listing" id="all-food-drink-listing">
+                <!-- Full listing will be injected here -->
             </div>
         </section>
 
@@ -78,28 +70,53 @@ background-size: cover; background-position: center; background-attachment: fixe
             fetch('https://nodejs.mizzou101.com/api/data/FoodDrink')
                 .then(response => response.json())
                 .then(data => {
-                    const listingContainer = document.getElementById('food-drink-listing');
-                    listingContainer.innerHTML = ''; // Clear previous content
-    
-                    // Create HTML for each item and append to the listing container
-                    data.forEach(item => {
-                        const itemDiv = document.createElement('div');
-                        itemDiv.className = 'category-item';
-                        itemDiv.innerHTML = `
-                            <a href="DetailPage.html?id=${item._id}"> <!-- Assuming each item has a unique identifier -->
-                                <img src="${item.imageUrl}" alt="${item.name}" class="logo">
-                                <p>${item.name}</p>
-                            </a>
-                        `;
-                        listingContainer.appendChild(itemDiv);
-                    });
+                    populateTopSpots(data);
+                    populateAllFoodDrinks(data);
                 })
                 .catch(error => {
                     console.error('Error fetching Food and Drink data:', error);
-                    listingContainer.innerHTML = '<p>Error loading data. Please try again later.</p>';
                 });
         }
+    
+        function populateTopSpots(data) {
+            const sortedData = [...data].sort((a, b) => a.Rank - b.Rank); // Sort by rank
+            const topSpots = sortedData.slice(0, 3); // Get top 3 spots
+            const listingContainer = document.getElementById('top-spots-listing');
+            listingContainer.innerHTML = '';
+            
+            topSpots.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'category-item';
+                itemDiv.innerHTML = `
+                    <a href="DetailPage.html?id=${item._id}">
+                        <img src="${item.Photo}" alt="${item.Name}" class="logo">
+                        <p>${item.Name}</p>
+                        <p>Rank: ${item.Rank}</p>
+                    </a>
+                `;
+                listingContainer.appendChild(itemDiv);
+            });
+        }
+    
+        function populateAllFoodDrinks(data) {
+            const listingContainer = document.getElementById('all-food-drink-listing');
+            listingContainer.innerHTML = '';
+            
+            data.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'category-item';
+                itemDiv.innerHTML = `
+                    <a href="DetailPage.html?id=${item._id}">
+                        <img src="${item.Photo}" alt="${item.Name}" class="logo">
+                        <p>${item.Name}</p>
+                    </a>
+                `;
+                listingContainer.appendChild(itemDiv);
+            });
+        }
     </script>
+    <script src= "../Scripts/Search.js"></script>
+    <script src= "../../Backend/nodeapp.js"></script>
     
 </body>
 </html>
