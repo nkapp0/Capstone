@@ -245,3 +245,50 @@ footer {
 .search-result-item div p {
     margin: 0;
 }
+
+
+/* Details Page Container Styles */
+.details-container {
+    max-width: 800px; /* Limits the width for better readability */
+    margin: 20px auto; /* Centers the container and adds vertical space */
+    padding: 20px;
+    background-color: var(--light-warm-gray); /* Soft background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    text-align: center; /* Centers the text within the container */
+}
+
+.details-container h1 {
+    font-size: 2rem; /* Large font size for the title */
+    color: var(--mizzou-gold); /* Mizzou gold for title emphasis */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.details-container img {
+    width: 100%; /* Full width of the container */
+    max-width: 400px; /* Maximum width of the image */
+    height: auto; /* Maintains aspect ratio */
+    margin: 20px 0; /* Vertical space around the image */
+    border-radius: 8px; /* Rounded corners for the image */
+}
+
+.details-container p, .details-container a {
+    color: var(--mizzou-black); /* Dark color for readability */
+    font-size: 1.2rem; /* Slightly larger text for easy reading */
+    line-height: 1.6; /* Line height for better text flow */
+}
+
+.details-container a {
+    display: inline-block; /* Makes the link block-like for easier interaction */
+    background-color: var(--mizzou-gold); /* Background color for links */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners for links */
+    text-decoration: none; /* No underline */
+    margin-top: 10px; /* Space above the link */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effects */
+}
+
+.details-container a:hover, .details-container a:focus {
+    background-color: var(--blue); /* Change background on hover/focus */
+    color: var(--light-warm-gray); /* Change text color on hover/focus */
+}
