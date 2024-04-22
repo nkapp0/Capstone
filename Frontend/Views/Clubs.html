@@ -37,21 +37,19 @@ background-size: cover; background-position: center; background-attachment: fixe
         </section>
 
         <!-- Clubs Section -->
-        <section id="clubs" class="category-section">
-            <h2 class="category-title">Mizzou Clubs</h2>
-            <div class="category-listing">
-                <div class="category-item">
-                    <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                    <p>Place 1</p>
-                </div>
-                <div class="category-item">
-                    <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                    <p>Place 2</p>
-                </div>
-                <div class="category-item">
-                    <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                    <p>Place 3</p>
-                </div>
+        <!-- Clubs - Top 3 Spots -->
+        <section id="top-spots" class="category-section">
+            <h2 class="category-title">Top 3 Spots</h2>
+            <div class="category-listing" id="top-spots-listing">
+                <!-- Top 3 spots will be injected here -->
+            </div>
+        </section>
+
+        <!-- Clubs - Full Listing -->
+        <section id="all-clubs" class="category-section">
+            <h2 class="category-title">All Clubs and Sports</h2>
+            <div class="category-listing" id="all-clubs-listing">
+                <!-- Full listing will be injected here -->
             </div>
         </section>
 
@@ -62,5 +60,8 @@ background-size: cover; background-position: center; background-attachment: fixe
     <footer>
         <p>&copy; 2024 Mizzou 101. All rights reserved. Team Azul.</p>
     </footer>
+    <script src= "../Scripts/Search.js"></script>
+    <script src= "../../Backend/nodeapp.js"></script>
+    <script src= "../Scripts/ClubData.js"></script>
 </body>
 </html>
