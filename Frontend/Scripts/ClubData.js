@@ -1,13 +1,13 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    fetchActivityAndClubData();
+    fetchClubData();
 });
 
-function fetchActivityAndClubData() {
+function fetchClubData() {
     fetch('https://nodejs.mizzou101.com/api/data/ClubSport')
         .then(response => response.json())
         .then(data => {
             populateTopSpots(data);
-            populateAllFoodDrinks(data);
+            populateAllClubs(data);
         })
         .catch(error => {
             console.error('Error fetching Clubs and Sports data:', error);
@@ -34,8 +34,8 @@ function populateTopSpots(data) {
     });
 }
 
-function populateAllClubsAndSports(data) {
-    const listingContainer = document.getElementById('all-club-sport-listing');
+function populateAllClubs(data) {
+    const listingContainer = document.getElementById('all-clubs-listing');
     listingContainer.innerHTML = '';
     
     data.forEach(item => {
