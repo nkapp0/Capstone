@@ -2,27 +2,42 @@ console.log("Search.js loaded");
 
 
 function performSearch() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase(); // Get the search term and convert to lowercase
-    const results = foodAndDrinkData.filter(item => 
-        item.Name.toLowerCase().includes(searchTerm) // Filter data based on search term
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const results = foodAndDrinkData.filter(item =>
+        item.Name.toLowerCase().includes(searchTerm)
     );
 
-    // Clear existing display and update with search results
     const listingContainer = document.getElementById('all-food-drink-listing');
-    listingContainer.innerHTML = ''; // Clear current content
+    listingContainer.innerHTML = ''; // Clear previous results
 
     results.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'category-item';
         itemDiv.innerHTML = `
             <a href="DetailPage.html?id=${item._id}">
-                <img src="${item.Photo}" alt="${item.Name}" class="logo">
+                <img src="${item.Photo}" alt="${item.Name}">
                 <p>${item.Name}</p>
             </a>
         `;
         listingContainer.appendChild(itemDiv);
     });
 }
+
+const debouncedSearch = debounce(performSearch, 250); // ms delay
+
+// Update event listener to use the debounced function
+document.getElementById('searchInput').oninput = debouncedSearch;
+
+function debounce(func, delay) {
+    let timer; // Timer to manage the delay
+    return function (...args) { // Return a function that can be debounced
+        clearTimeout(timer); // Clear the existing timer
+        timer = setTimeout(() => { // Set a new timer
+            func.apply(this, args); // Call the original function after the delay
+        }, delay); // Set the delay in milliseconds
+    };
+}
+
 
 let foodAndDrinkData = []; // Global variable to store fetched data
 
