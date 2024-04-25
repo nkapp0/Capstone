@@ -31,10 +31,11 @@ body, html {
 
 /* Top Navigation Bar Styles */
 .top-nav-container {
-    background-color: var(--mizzou-black); 
-    color: var(--mizzou-black); 
+    background-color: var(--mizzou-black);
+    color: var(--light-gray);
     width: 100%;
-    padding: 0.5rem; /* Adjust the padding as needed */
+    padding: 0.5rem;
+    position: relative; /* For absolute positioning of nav menu icon */
 }
 
 .top-nav {
@@ -42,9 +43,35 @@ body, html {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    font-size: x-large;
-    
 }
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu div {
+    height: 3px;
+    background: var(--mizzou-gold);
+    margin: 5px 0;
+    transition: transform 0.3s;
+}
+
+/* Style changes when nav menu is opened */
+.hamburger-menu.active div:nth-of-type(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active div:nth-of-type(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active div:nth-of-type(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 
 .logo-container img {
     height: 80px; /* Adjust the size as needed */
@@ -56,50 +83,88 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 2; /* Allows links to take up available space */
+    width: 75%;
+    background-color: var(--mizzou-black);
+    flex-grow: 2;
+    flex-direction: row; /* Direction set to row for larger screens */
+}
+
+.nav-links.active {
+    
+    display: flex; /* Display the links when active */
+    flex-direction: column; /* Stack the links for small screens */
 }
 
 .nav-links a {
-    color: #F1B82D; /* Mizzou Gold */
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Spacing around links */
-    margin: 0 0.5rem; /* Space between links */
+
+    text-align: center; 
+    color: white;
+    background-color: var(--mizzou-black); 
+    border: 2px solid var(--mizzou-gold); 
+    padding: 10px 20px; 
+    margin: 0 1rem; 
     border-radius: 5px;
-    transition: background-color 0.3s;
-    -webkit-text-stroke-width: 0.3px;
-    -webkit-text-stroke-color: var(--gray); /* Stroke color */
+    font-size: 1.2rem; /* Larger font size for the links */
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
 }
 
 .nav-links a:hover {
     background-color: #333; /* Darker background on hover */
+    color: var(--mizzou-gold); /* Gold text on hover for an interactive feel */
+    background-color: var(--gray); /* A darker background on hover */
+    text-decoration: none; /* Override any default browser styles */
 }
 
 .search-container input[type="search"] {
     padding: 0.5rem;
+    margin: 0;
+    border: 2px solid var(--mizzou-gold); 
+    border-radius: 5px;
+    background-color: #fff; /* White background for contrast */
+    color: #000; /* Black text for readability */
+}
+.search-container{
+    padding: 0rem;
+    margin: 0;
     border: 1px solid #F1B82D; /* Mizzou Gold border */
     border-radius: 5px;
     background-color: #fff; /* White background for contrast */
     color: #000; /* Black text for readability */
-    margin-left: 1rem;
 }
-
 
 /* Responsive Design for the top nav */
 @media (max-width: 768px) {
-    .top-nav {
-        flex-direction: column;
-        align-items: flex-start;
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu on small screens */
     }
 
+    /* When hamburger menu is displayed, nav-links are hidden */
     .nav-links {
-        justify-content: flex-start;
-        margin-top: 0.5rem;
-        width: 100%;
+        display: none; /* Hide the links initially */
+        position: absolute;
+        background-color: var(--mizzou-black);
+        top: 60px; /* Position below the nav bar */
+        width: 80%;
+        left: 0;
+        flex-direction: column;
+    }
+    .nav-links a {
+        width: 100%; /* Full width links for a mobile-friendly nav */
+        margin: 0.5rem 0; /* Adjust spacing for a stacked layout */
+        text-align: center; /* Ensure text is centered within each link */
     }
 
+    /* Adjust search container on smaller screens */
     .search-container {
         width: 100%;
         margin-top: 0.5rem;
+    }
+
+    /* Adjust top-nav layout on smaller screens */
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
