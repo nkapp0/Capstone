@@ -7,5 +7,4 @@ Welcome to the Mizzou 101 Website project repository. This website is designed t
 - Interactive campus map
 - Listings of food and drink venues, clubs, and student services
 - Information about parking and outdoor activities
-- Student login functionality with security measures
 - Responsive design for optimal viewing on all devices
