@@ -17,16 +17,15 @@ background-size: cover; background-position: center; background-attachment: fixe
                     </a>
                 </div>
                 <div class="nav-links">
+                    <a href="HomePage.html">Home</a>
                     <a href="FoodAndDrink.html">Food and Drink</a>
                     <a href="Clubs.html">Clubs</a>
                     <a href="parking.html">Parking</a>
                     <a href="StudentServices.html">Student Services</a>
                     <a href="outdoorActivities.html">Outdoor Activities</a>
                 </div>
-                <div class="search-container">
-                    <input type="search" placeholder="Search...">
-                </div>
             </nav>
+                
         </div>
     </header>
 
@@ -38,10 +37,9 @@ background-size: cover; background-position: center; background-attachment: fixe
 
         <!-- Clubs Section -->
         <!-- Clubs - Top 3 Spots -->
-        <section id="top-spots" class="category-section">
-            <h2 class="category-title">Top 3 Spots</h2>
-            <div class="category-listing" id="top-spots-listing">
-                <!-- Top 3 spots will be injected here -->
+        <section class="category-section">
+            <div class="search-container">
+                <input type="search" id="searchInput" placeholder="Search...">
             </div>
         </section>
 
@@ -60,8 +58,8 @@ background-size: cover; background-position: center; background-attachment: fixe
     <footer>
         <p>&copy; 2024 Mizzou 101. All rights reserved. Team Azul.</p>
     </footer>
-    <script src= "../Scripts/Search.js"></script>
-    <script src= "../../Backend/nodeapp.js"></script>
+    
     <script src= "../Scripts/ClubData.js"></script>
+    <script src= "../Scripts/ClubSearch.js"></script>
 </body>
 </html>
