@@ -1,13 +1,13 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    fetchActivityAndClubData();
+    fetchClubData();
 });
 
-function fetchActivityAndClubData() {
+function fetchClubData() {
     fetch('https://nodejs.mizzou101.com/api/data/ClubSport')
         .then(response => response.json())
         .then(data => {
             populateTopSpots(data);
-            populateAllFoodDrinks(data);
+            populateAllClubs(data);
         })
         .catch(error => {
             console.error('Error fetching Clubs and Sports data:', error);
@@ -24,26 +24,25 @@ function populateTopSpots(data) {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'category-item';
         itemDiv.innerHTML = `
-            <a href="DetailPage.html?id=${item._id}">
-                <img src="${item.Photo}" alt="${item.Name}" class="logo">
+            <a href="ClubDetailPage.html?id=${item._id}">
+                
                 <p>${item.Name}</p>
-                <p>Rank: ${item.Rank}</p>
             </a>
         `;
         listingContainer.appendChild(itemDiv);
     });
 }
 
-function populateAllClubsAndSports(data) {
-    const listingContainer = document.getElementById('all-club-sport-listing');
+function populateAllClubs(data) {
+    const listingContainer = document.getElementById('all-clubs-listing');
     listingContainer.innerHTML = '';
     
     data.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'category-item';
         itemDiv.innerHTML = `
-            <a href="DetailPage.html?id=${item._id}">
-                <img src="${item.Photo}" alt="${item.Name}" class="logo">
+            <a href="ClubDetailPage.html?id=${item._id}">
+                
                 <p>${item.Name}</p>
             </a>
         `;

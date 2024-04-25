@@ -31,17 +31,20 @@ app.get('/api/data/:collection', async (req, res) => {
   }
 });
 
-// api to update data in specified collection
-app.put('/api/data/:collection/:id', async (req, res) => {
+// exension of api endpoint to get data from specified id in collection 
+app.get('/api/data/:collection/:id', async (req, res) => {
   try {
     const { collection, id } = req.params;
-    const updatedData = req.body;
-    const result = await db
-      .collection(collection)
-      .updateOne({ _id: ObjectId(id) }, { $set: updatedData });
-    res.json({ message: 'Data updated successfully', modifiedCount: result.modifiedCount });
+    const parsedId = parseInt(id); 
+    const data = await db.collection(collection).findOne({ _id: parsedId });
+
+    if (!data) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+
+    res.json(data);
   } catch (err) {
-    res.status(500).json({ message: 'Error updating data', error: err });
+    res.status(500).json({ message: 'Error retrieving data', error: err });
   }
 });
 
