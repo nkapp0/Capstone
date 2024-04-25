@@ -24,10 +24,9 @@ function populateTopSpots(data) {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'category-item';
         itemDiv.innerHTML = `
-            <a href="DetailPage.html?id=${item._id}">
-                <img src="${item.Photo}" alt="${item.Name}" class="logo">
+            <a href="ClubDetailPage.html?id=${item._id}">
+                
                 <p>${item.Name}</p>
-                <p>Rank: ${item.Rank}</p>
             </a>
         `;
         listingContainer.appendChild(itemDiv);
@@ -42,8 +41,8 @@ function populateAllClubs(data) {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'category-item';
         itemDiv.innerHTML = `
-            <a href="DetailPage.html?id=${item._id}">
-                <img src="${item.Photo}" alt="${item.Name}" class="logo">
+            <a href="ClubDetailPage.html?id=${item._id}">
+                
                 <p>${item.Name}</p>
             </a>
         `;
