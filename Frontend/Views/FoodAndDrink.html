@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Mizzou 101</title>
     <link rel="stylesheet" href="..\CSS\Style1.css">
+    <style>
+        .dropdown {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .white-box {
+            background-color: white;
+            padding: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body style="background-image: url('https://img.freepik.com/free-vector/black-carbon-fiber-texture-pattern-background_1017-33436.jpg?w=1060&t=st=1712242325~exp=1712242925~hmac=1ad73ffc1ebff180e9ba1c102a4459d73fd12893015ddd9eab44e19c5fd2af31'); 
 background-size: cover; background-position: center; background-attachment: fixed;">
     <header>
@@ -25,15 +54,38 @@ background-size: cover; background-position: center; background-attachment: fixe
                     <a href="outdoorActivities.html">Outdoor Activities</a>
                 </div>
             </nav>
-               
+
         </div>
     </header>
 
     <main>
         <section class="introduction">
             <h1>Welcome to the Food and Drink Page</h1>
-            <p>Discover the many great and diverse food options that Columbia has to offer. 
-                Ranging from On Campus, Downtown Columbia, and all the bars Columbia has to offer.</p>
+            <p>Discover the many great and diverse food options that Columbia has to offer.
+                Ranging from On Campus, Downtown Columbia, and all the bars Columbia has to offer.
+            </p>
+            <p>&nbsp;</p>
+            <p>Want to vote for your favorite restaurant? Know a place that we missed?</p>
+            <div>
+                Click <div class="dropdown">
+                    <span class="white-box" onclick="toggleForm()">here</span>
+                    <div class="dropdown-content" id="formContainer">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNpYgwPcYlQ5XPNsRqIhXfvkfRz5f9BCE0pEhfJBDQIeYxbQ/viewform?embedded=true" width="450" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                </div>
+                to let us know?
+            </div>
+
+            <script>
+                function toggleForm() {
+                    var formContainer = document.getElementById("formContainer");
+                    if (formContainer.style.display === "block") {
+                        formContainer.style.display = "none";
+                    } else {
+                        formContainer.style.display = "block";
+                    }
+                }
+            </script>
         </section>
         <section class="category-section">
             <div class="search-container">
@@ -58,8 +110,8 @@ background-size: cover; background-position: center; background-attachment: fixe
             </div>
         </section>
 
- 
-        
+
+
     </main>
 
     <footer>
@@ -69,7 +121,7 @@ background-size: cover; background-position: center; background-attachment: fixe
         window.addEventListener('DOMContentLoaded', (event) => {
             fetchFoodAndDrinkData();
         });
-    
+
         function fetchFoodAndDrinkData() {
             fetch('https://nodejs.mizzou101.com/api/data/FoodDrink')
                 .then(response => response.json())
@@ -81,13 +133,13 @@ background-size: cover; background-position: center; background-attachment: fixe
                     console.error('Error fetching Food and Drink data:', error);
                 });
         }
-    
+
         function populateTopSpots(data) {
             const sortedData = [...data].sort((a, b) => a.Rank - b.Rank); // Sort by rank
             const topSpots = sortedData.slice(0, 3); // Get top 3 spots
             const listingContainer = document.getElementById('top-spots-listing');
             listingContainer.innerHTML = '';
-            
+
             topSpots.forEach(item => {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'category-item';
@@ -101,11 +153,11 @@ background-size: cover; background-position: center; background-attachment: fixe
                 listingContainer.appendChild(itemDiv);
             });
         }
-    
+
         function populateAllFoodDrinks(data) {
             const listingContainer = document.getElementById('all-food-drink-listing');
             listingContainer.innerHTML = '';
-            
+
             data.forEach(item => {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'category-item';
@@ -119,8 +171,9 @@ background-size: cover; background-position: center; background-attachment: fixe
             });
         }
     </script>
-    <script src= "../Scripts/Search.js"></script>
-    
-    
+    <script src="../Scripts/Search.js"></script>
+
+
 </body>
+
 </html>
