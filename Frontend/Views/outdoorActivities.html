@@ -21,7 +21,7 @@ background-size: cover; background-position: center; background-attachment: fixe
                     <a href="HomePage.html">Home</a>
                     <a href="FoodAndDrink.html">Food and Drink</a>
                     <a href="Clubs.html">Clubs</a>
-                    <a href="#parking">Parking</a>
+                    <a href="parking.html">Parking</a>
                     <a href="StudentServices.html">Student Services</a>
                     <a href="outdoorActivities.html">Outdoor Activities</a>
                 </div>
@@ -34,29 +34,16 @@ background-size: cover; background-position: center; background-attachment: fixe
             <h1>Welcome to the Outdoor Activities page.</h1>
             <p>Columbia offers a variety of outdoor extracurricular activities to enjoy.</p>
         </section>
-        
+
         <section class="category-section">
-            <div class="search-container">
-                <input type="search" placeholder="Search...">
-            </div>
+           
         </section>
 
         
-        <section id="outdoor-activities" class="category-section">
-            <h2 class="category-title"></h2>
-            <div class="category-listing">
-                <div class="category-item">
-                    <img src="tiger-logo.png" alt="Place 1">
-                    <p>Place 1</p>
-                </div>
-                <div class="category-item">
-                    <img src="tiger-logo.png" alt="Place 2">
-                    <p>Place 2</p>
-                </div>
-                <div class="category-item">
-                    <img src="tiger-logo.png" alt="Place 3">
-                    <p>Place 3</p>
-                </div>
+        <section id="all-outdoor" class="category-section">
+            <h2 class="category-title"> Outdoor Activities</h2>
+            <div class="category-listing" id="all-outdoor-listing">
+                <!-- Full listing will be injected here -->
             </div>
         </section>
 
@@ -67,5 +54,7 @@ background-size: cover; background-position: center; background-attachment: fixe
     <footer>
         <p>&copy; 2024 Mizzou 101. All rights reserved. Team Azul.</p>
     </footer>
+    <script src= "../Scripts/OutdoorData.js"></script>
+    <script src= "../Scripts/OutdoorSearch.js"></script>
 </body>
 </html>

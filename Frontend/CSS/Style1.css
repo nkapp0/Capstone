@@ -35,11 +35,7 @@ body, html {
     color: var(--light-gray);
     width: 100%;
     padding: 0.5rem;
-    position: relative; 
-    flex-direction: column; 
-    align-items: center;
     display: flex;
-    justify-content: center;
 }
 
 .top-nav {
@@ -48,15 +44,13 @@ body, html {
     align-items: center;
     flex-wrap: wrap;
     max-width: 1200px; 
-    width: 100%; 
-    padding: 0 1rem;
+    margin: 0 auto;
 }
 
-
-
 .logo-container img {
-    height: 80px; /* Adjust the size as needed */
-    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 80px;
     margin-right: 1rem;
 }
 
@@ -64,9 +58,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75%;
-    background-color: var(--mizzou-black);
-    flex-grow: 2;
+    width: 90%; /* */
     flex-direction: row; /* Direction set to row for larger screens */
 }
 
@@ -77,10 +69,9 @@ body, html {
 }
 
 .nav-links a {
-
-    text-align: center; 
+    text-align: center;
+    white-space: nowrap;
     color: white;
-    background-color: var(--mizzou-black); 
     border: 2px solid var(--mizzou-gold); 
     padding: 10px 20px; 
     margin: 0 1rem; 
@@ -118,7 +109,7 @@ body, html {
     width: auto; 
     max-width: 450px;
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center; 
     padding: 5px 0;
     display: contents;
     align-items: center;
@@ -126,56 +117,53 @@ body, html {
 
 /* Responsive Design for the top nav */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide the links initially */
-        background-color: var(--mizzou-black);
-        top: 60px; /* Position below the nav bar */
-        width: 100%;
-        justify-content: center;
-        margin-top: 0.5rem;
-        flex-direction: column;
-    }
-    .nav-links a {
-        width: 100%; /* Full width links for a mobile-friendly nav */
-        margin: 0.5rem 0; /* Adjust spacing for a stacked layout */
-        text-align: center; /* Ensure text is centered within each link */
-    }
-
-    /* Adjust search container on smaller screens */
-    .search-container {
-        width: 100%;
-        margin-top: 0.5rem;
-        justify-content: center;
-    }
-
-    /* Adjust top-nav layout on smaller screens */
-    .top-nav {
-        flex-direction: column;
+    .top-nav-container {
         padding: 0.5rem;
     }
-}
-@media (max-width: 480px) { /* Adjustments for mobile phones */
+
     .top-nav {
-        padding: 0.2rem;
-        font-size: small;
         flex-direction: column;
-    }
-    .nav-links {
-        display: none; /* Hide the links initially */
-        background-color: var(--mizzou-black);
-        top: 60px; /* Position below the nav bar */
-        width: 100%;
-        justify-content: center;
-        margin-top: 0.5rem;
-        flex-direction: column;
-    }
-    .nav-links a {
-        width: 100%; /* Full width links for a mobile-friendly nav */
-        margin: 0.5rem 0; /* Adjust spacing for a stacked layout */
-        text-align: center; /* Ensure text is centered within each link */
     }
 
+    .nav-links {
+        width: auto;
+        flex-direction: column;
     }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0; /* Add some space between each link */
+    }
+    .logo-container img {
+        margin-right: 0rem;
+    }
+}
+
+/* Media Query for Mobile Phones */
+@media (max-width: 480px) {
+    .top-nav-container {
+        padding: 0.2rem;
+    }
+
+    .top-nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        width: auto;
+        flex-direction: column;
+    }
+
+    .nav-links a {
+        padding: 5px 10px; /* Adjust padding for smaller screens */
+        margin: 0.2rem 0; /* Reduce margin for smaller screens */
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+    .logo-container img {
+        margin-right: 0rem;
+    }
+}
 
 /* Main Content Styles */
 main {
@@ -203,7 +191,7 @@ main {
 
 .category-title {
     margin-bottom: 1rem;
-    color: #F1B82D; /* Mizzou Gold for titles */
+    color: var(--mizzou-gold); 
 }
 
 .category-listing {
@@ -215,7 +203,7 @@ main {
 
 .category-item {
     background-color: var(--light-gray); 
-    width: 350px; /* Adjust width as necessary */
+    width: 350px; 
     padding: 1rem;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
@@ -229,30 +217,27 @@ main {
 }
 
 .category-item img {
-    max-width: 80%; /* Adjust as necessary to fit the container */
+    max-width: 80%; 
     border-radius: 50%; /* Round the images */
-    margin-bottom: 1rem; /* Space between the image and text label */
+    margin-bottom: 1rem; 
 }
 
 .category-item p {
     font-weight: bold;
-    color: #000000; /* Text color for better contrast */
+    color: var(--mizzou-black); 
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #000000; /* Mizzou Black */
-    color: #F1B82D; /* Mizzou Gold */
+    background-color: var(--mizzou-black); /* Mizzou Black */
+    color: var(--mizzou-gold); /* Mizzou Gold */
     margin-top: 2rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .top-nav {
-        flex-direction: column;
-    }
     
     .category-listing {
         grid-template-columns: 1fr; /* Stack items in a single column on smaller screens */
@@ -260,12 +245,12 @@ footer {
 }
 
 #map {
-    height: 400px; /* Adjust as needed */
+    height: 400px; 
 }
 
 .parking-listing {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapt number of columns to container width */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 1rem;
     padding: 1rem;
 }
@@ -273,9 +258,8 @@ footer {
 .parking-item {
     background-color: var(--light-gray); /* Light gray color for the item background */
     border-radius: 10px;
-    overflow: hidden; /* Keeps the child image within the rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
-    text-align: center;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -285,21 +269,21 @@ footer {
 
 .parking-item a {
     display: block;
-    color: var(--mizzou-black); /* Mizzou Black for text */
+    color: var(--mizzou-black);
     text-decoration: none;
 }
 
 .parking-item img {
-    width: 100%; /* Ensures the image covers the width */
-    height: auto; /* Adjusts the height automatically */
-    border-bottom: 5px solid var(--mizzou-gold); /* Mizzou Gold border below the image */
+    width: 100%; 
+    height: auto;
+    border-bottom: 5px solid var(--mizzou-gold); 
 }
 
 .parking-item p {
     margin: 0.5rem 0;
     padding: 0.5rem;
-    background-color: var(--mizzou-gold); /* Mizzou Gold for the title background */
-    color: var(--mizzou-black); /* Mizzou Black for the title text */
+    background-color: var(--mizzou-gold); 
+    color: var(--mizzou-black); 
 }
 
 .search-result-item {
@@ -326,19 +310,19 @@ footer {
 
 /* Details Page Container Styles */
 .details-container {
-    max-width: 800px; /* Limits the width for better readability */
-    margin: 20px auto; /* Centers the container and adds vertical space */
+    max-width: 800px;
+    margin: 20px auto; 
     padding: 20px;
-    background-color: var(--light-warm-gray); /* Soft background color */
-    border-radius: 8px; /* Rounded corners */
+    background-color: var(--light-warm-gray); 
+    border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
     text-align: center; /* Centers the text within the container */
 }
 
 .details-container h1 {
     font-size: 2rem; /* Large font size for the title */
-    color: var(--mizzou-gold); /* Mizzou gold for title emphasis */
-    margin-bottom: 10px; /* Space below the title */
+    color: var(--mizzou-gold); 
+    margin-bottom: 10px; 
 }
 
 .details-container img {
@@ -350,18 +334,18 @@ footer {
 }
 
 .details-container p, .details-container a {
-    color: var(--mizzou-black); /* Dark color for readability */
-    font-size: 1.2rem; /* Slightly larger text for easy reading */
-    line-height: 1.6; /* Line height for better text flow */
+    color: var(--mizzou-black); 
+    font-size: 1.2rem; 
+    line-height: 1.6; 
 }
 
 .details-container a {
-    display: inline-block; /* Makes the link block-like for easier interaction */
-    background-color: var(--mizzou-gold); /* Background color for links */
+    display: inline-block;
+    background-color: var(--mizzou-gold); 
     padding: 10px 20px;
-    border-radius: 5px; /* Rounded corners for links */
+    border-radius: 5px; 
     text-decoration: none; /* No underline */
-    margin-top: 10px; /* Space above the link */
+    margin-top: 10px; 
     transition: background-color 0.3s, color 0.3s; /* Transition for hover effects */
 }
 
