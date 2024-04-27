@@ -51,3 +51,11 @@ function populateAllFoodDrinks(data) {
     });
 }
 
+function myFunction() {
+    var x = document.getElementById("top-nav-container");
+    if (x.className === "top-nav") {
+      x.className += " responsive";
+    } else {
+      x.className = "top-nav";
+    }
+  }
