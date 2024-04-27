@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mizzou 101 Parking</title>
     <link rel="stylesheet" href="../CSS/Style1.css">
+    <script type="module" src="MapOverlay.js"></script>
+    <style>
+        .map-key {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .map-key h2 {
+            margin-top: 0;
+        }
+
+        .map-key ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .map-key li {
+            margin-bottom: 5px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .color-box {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #000;
+        }
+
+        .hidden-menu-container {
+            display: inline-block;
+            background-color: white;
+            border: 1px solid #000;
+            padding: 5px;
+        }
+
+        .hidden-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #000;
+            padding: 10px;
+            z-index: 999;
+        }
+    </style>
 </head>
+
 <body style="background-image: url('https://img.freepik.com/free-vector/black-carbon-fiber-texture-pattern-background_1017-33436.jpg?w=1060&t=st=1712242325~exp=1712242925~hmac=1ad73ffc1ebff180e9ba1c102a4459d73fd12893015ddd9eab44e19c5fd2af31'); 
 background-size: cover; background-position: center; background-attachment: fixed;">
     <header>
@@ -24,42 +72,109 @@ background-size: cover; background-position: center; background-attachment: fixe
                     <a href="StudentServices.html">Student Services</a>
                     <a href="outdoorActivities.html">Outdoor Activities</a>
                 </div>
-                
             </nav>
+
         </div>
     </header>
 
     <main>
         <!-- Google API Map -->
+        <h1>Parking Map</h1>
         <div id="map"></div>
 
-        <!-- Parking Garages Listing -->
         <section id="parking-garages" class="category-section">
-            <h2 class="category-title">Parking Garages</h2>
-            <div class="parking-listing">
-                <!-- Placeholder for Parking Garage 1 -->
-                <div class="parking-item">
-                    <a href="garage1-description.html">
-                        <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                        <p>Garage 1</p>
-                    </a>
-                </div>
-                <!-- Placeholder for Parking Garage 2 -->
-                <div class="parking-item">
-                    <a href="garage2-description.html">
-                        <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                        <p>Garage 2</p>
-                    </a>
-                </div>
-                <!-- Placeholder for Parking Garage 3 -->
-                <div class="parking-item">
-                    <a href="garage3-description.html">
-                        <img src="Mizzou101 Logo.png" alt="Mizzou Logo" class="logo">
-                        <p>Garage 3</p>
-                    </a>
-                </div>
-                <!-- Add more placeholders as needed -->
+            <h2 class="category-title">Parking Details</h2>
+            <div class="map-key">
+                <h2>Parking Map Key</h2>
+                <p>&nbsp;</p>
+                <h3>Campus</h3>
+                <ul>
+                    <li><span class="color-box" style="background-color: #900000;"></span> Parking Pass</li>
+                    <li><span class="color-box" style="background-color: #ff7120;"></span> Metered</li>
+                    <li><span class="color-box" style="background-color: #8F8884;"></span> Flowbird</li>
+                </ul>
+                <p>All campus metered lots and listed parking structures are enforced 7AM - 6PM Monday through Friday
+                    unless otherwise specified.</p>
+                <p>&nbsp;</p>
+
+
+                <h3>City</h3>
+                <ul>
+                    <li><span class="color-box" style="background-color: #ffffff;"></span> Parking Pass</li>
+                    <li><span class="color-box" style="background-color: #2f76b8;"></span> Metered</li>
+                </ul>
+                <p>All city garages have hourly (50 cents per hour) and permit spaces which are enforced Monday through
+                    Friday 8AM-6PM. Hourly spots are payable by cash or card. Listed city lots are enforced Monday
+                    through Saturday 8AM-6PM. Street and small lot parking is available downtown but is typically low
+                    availability and is not listed.</p>
+                <p>&nbsp;</p>
+
+                <p>For more information on campus parking click <a href="https://www.parking.missouri.edu">here</a></p>
+                <p>For more information on city parking click <a
+                        href="https://www.como.gov/public-works/parking">here</a></p>
             </div>
+            <div class="hidden-menu-container">
+                <p>
+                    <span>For those with color impairment click </span><a href="#" id="hidden-menu-link">here</a><span>
+                        for a detailed list</span>
+                </p>
+            </div>
+            <div id="hidden-menu" class="hidden-menu">
+                <h3>Campus Lots/Garages:</h3>
+                <ul>
+                    <li>HSPS - Parking Pass/Metered/Flowbird</li>
+                    <li>HSVL - Metered/Flowbird</li>
+                    <li>UAPS - Parking Pass</li>
+                    <li>VAPS - Parking Pass</li>
+                    <li>VASL - Metered/Flowbird</li>
+                    <li>TAPS - Parking Pass</li>
+                    <li>TAG - Parking Pass</li>
+                    <li>CAPS - Parking Pass</li>
+                    <li>RP10 - Parking Pass</li>
+                    <li>WC19 - Flowbird</li>
+                    <li>RC21 - Flowbird</li>
+                    <li>MH1 - Flowbird</li>
+                    <li>SG2 - Parking Pass</li>
+                    <li>SG4 - Parking Pass</li>
+                    <li>SG5 - Parking Pass</li>
+                    <li>SG6 - Parking Pass</li>
+                    <li>SG7 - Parking Pass</li>
+                    <li>Lot G - Parking Pass</li>
+                    <li>WG1/L - Metered/Flowbird</li>
+                    <li>AV9 - Parking Pass</li>
+                    <li>AV14A/B - Parking Pass</li>
+                    <li>CG17/W - Metered/Flowbird</li>
+                    <li>CG15 - Parking Pass</li>
+                    <li>WG10 - Flowbird</li>
+                    <li>MUVL - Flowbird</li>
+                </ul>
+                <h3>City Lots/Garages:</h3>
+                <ul>
+                    <li>10&Cherry - Metered/Parking Pass</li>
+                    <li>8&Cherry - Metered/Parking Pass</li>
+                    <li>6&Cherry - Metered/Parking Pass</li>
+                    <li>Short St - Metered/Parking Pass</li>
+                    <li>5&Walnut - Metered/Parking Pass</li>
+                    <li>8&Walnut - Metered/Parking Pass</li>
+                    <li>Armory Lot - Parking Pass</li>
+                    <li>9&Ash Lot - Parking Pass</li>
+                    <li>Wabash Lot - Parking Pass</li>
+                </ul>
+            </div>
+
+            <script>
+                var menuVisible = false;
+                document.getElementById('hidden-menu-link').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (menuVisible) {
+                        document.getElementById('hidden-menu').style.display = 'none';
+                        menuVisible = false;
+                    } else {
+                        document.getElementById('hidden-menu').style.display = 'block';
+                        menuVisible = true;
+                    }
+                });
+            </script>
         </section>
     </main>
 
@@ -67,19 +182,11 @@ background-size: cover; background-position: center; background-attachment: fixe
         <p>&copy; 2024 Mizzou 101. All rights reserved.</p>
     </footer>
 
-    <!-- Link to Google Maps JavaScript API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <script>
-        // Placeholder for initializing the Google Map
-        function initMap() {
-            var mapOptions = {
-                zoom: 15,
-                center: { lat: 38.9404, lng: -92.3277 } // Coordinates of Mizzou
-            };
-            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-            
-            // Further map setup and garage markers go here
-        }
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiaTDx3rQNOIpkURq2wpjbzGS7sDSsEEo&callback=initMap&v=weekly"
+        async defer>
     </script>
+
 </body>
+
 </html>
