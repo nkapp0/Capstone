@@ -135,24 +135,26 @@ background-size: cover; background-position: center; background-attachment: fixe
         }
 
         function populateTopSpots(data) {
-            const sortedData = [...data].sort((a, b) => a.Rank - b.Rank); // Sort by rank
-            const topSpots = sortedData.slice(0, 3); // Get top 3 spots
+            // Sort data by 'Rank' in descending order to get the most votes at the top
+            const sortedData = [...data].sort((a, b) => b.Rank - a.Rank);
+            const topSpots = sortedData.slice(0, 3); // Get the top 3 spots with the most votes
             const listingContainer = document.getElementById('top-spots-listing');
             listingContainer.innerHTML = '';
 
+            // Populate the HTML with the top 3 spots
             topSpots.forEach(item => {
-                const itemDiv = document.createElement('div');
+                const itemDiv = document.createElement('article');
                 itemDiv.className = 'category-item';
                 itemDiv.innerHTML = `
                     <a href="DetailPage.html?id=${item._id}">
-                        <img src="${item.Photo}" alt="${item.Name}" class="logo">
+                        <img src="${item.Photo}" alt="${item.Name}" class="logo" onerror="this.src='fallback.jpg';">
                         <p>${item.Name}</p>
-                        <p>Rank: ${item.Rank}</p>
+                        <p>Votes: ${item.Rank}</p>
                     </a>
                 `;
                 listingContainer.appendChild(itemDiv);
             });
-        }
+            }
 
         function populateAllFoodDrinks(data) {
             const listingContainer = document.getElementById('all-food-drink-listing');
