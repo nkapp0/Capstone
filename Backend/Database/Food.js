@@ -7,7 +7,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 2,
@@ -47,7 +47,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 6,
@@ -87,7 +87,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 10,
@@ -97,7 +97,7 @@
     "Tag1": "Alcohol",
     "Tag2": "",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 11,
@@ -107,7 +107,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 12,
@@ -117,7 +117,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 13,
@@ -157,7 +157,7 @@
     "Tag1": "Alcohol",
     "Tag2": "",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 17,
@@ -167,7 +167,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 18,
@@ -177,7 +177,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 19,
@@ -197,7 +197,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 21,
@@ -207,7 +207,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 22,
@@ -227,7 +227,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 24,
@@ -237,7 +237,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 25,
@@ -247,7 +247,7 @@
     "Tag1": "Alcohol",
     "Tag2": "",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 26,
@@ -287,7 +287,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 30,
@@ -317,7 +317,7 @@
     "Tag1": "Bar",
     "Tag2": "Food",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
       "_id": 33,
@@ -326,7 +326,7 @@
     "Description": "Mexican styled food",
     "Tag1": "Mexican",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     
     {
@@ -336,7 +336,7 @@
     "Description": "Cafe and Coffee",
     "Tag1": "Cafe",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     
     {
@@ -346,7 +346,7 @@
     "Description": "Barbeque and Soul Food",
     "Tag1": "Barbeque",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 36,
@@ -355,7 +355,7 @@
     "Description": "Sandwich style cafe",
     "Tag1": "Cafe",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 37,
@@ -364,7 +364,7 @@
     "Description": "Hot, Cold, and Blended Drinks with Snacks",
     "Tag1": "Cafe",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     
     {
@@ -375,7 +375,7 @@
     "Tag1": "Chicken",
     "Tag2": "Burgers",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 40,
@@ -384,7 +384,7 @@
     "Description": "Buffet Cafeteria food",
     "Tag1": "Casual",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 41,
@@ -394,7 +394,7 @@
     "Tag1": "Breakfast",
     "Tag2": "Coffee",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 42,
@@ -404,7 +404,7 @@
     "Tag1": "Pizza",
     "Tag2": "Wings",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     
     {
@@ -414,7 +414,7 @@
     "Description": "Located within the Hudson and Gillett dorm building serving pizza and wings",
     "Tag1": "Wings",
     "Rank": 0,
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
     },
     {
     "_id": 44,
@@ -424,7 +424,7 @@
     "Description": "Southeast Asian fusion serving ramen, rice bowls, tacos, etc.",
     "Tag1": "Asian",
     "Tag2": "",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 48,
@@ -434,7 +434,7 @@
     "Description": "Walk-up sushi with grab and go sushi rolls and sides",
     "Tag1": "Sushi",
     "Tag2": "",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 50,
@@ -444,7 +444,7 @@
     "Description": "Bakery serving breakfast and dessert as well as smoothies",
     "Tag1": "Bakery",
     "Tag2": "",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 51,
@@ -454,7 +454,7 @@
     "Description": "Sandwich shop specializing in breakfast and lunch. Also a nice place to grab a soup or salad on campus",
     "Tag1": "Lunch",
     "Tag2": "",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
     {
     "_id": 53,
@@ -504,7 +504,7 @@
     "Description": "Comfort food, includes a bar and an outdoor seating area upstairs",
     "Tag1": "Comfort Food",
     "Tag2": "Bar",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 59,
@@ -554,7 +554,7 @@
     "Description": "Hipster vibe spot with live music in the evenings",
     "Tag1": "Breakfast",
     "Tag2": "Lunch",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 64,
@@ -574,7 +574,7 @@
     "Description": "Variety of foods, as well as a solid bar and nightlife scene",
     "Tag1": "Lunch",
     "Tag2": "Bar",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 66,
@@ -584,7 +584,7 @@
     "Description": "Dynamic comfort food with a bar included",
     "Tag1": "Pub Food",
     "Tag2": "Bar",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 67,
@@ -634,7 +634,7 @@
     "Description": "Authentic New York Style bagel shop",
     "Tag1": "Breakfast",
     "Tag2": "",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 72,
@@ -644,7 +644,7 @@
     "Description": "Smoothie cafe with a variety of food options as well",
     "Tag1": "Smoothies",
     "Tag2": "",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 73,
@@ -654,7 +654,7 @@
     "Description": "Bakery with plenty of breakfast and lunch options, as well as a bar",
     "Tag1": "Breakfast/Lunch",
     "Tag2": "Bakery, Bar",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 74,
@@ -664,7 +664,7 @@
     "Description": "Warm and comforting bagel spot with over 15 different bagel options",
     "Tag1": "Breakfast",
     "Tag2": "Bagels",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 75,
@@ -674,7 +674,7 @@
     "Description": "Juice and smoothie bar",
     "Tag1": "Smoothies",
     "Tag2": "",
-    "Photo": "Placeholder"
+    "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
     "_id": 76,
@@ -704,7 +704,7 @@
       "Description": "Locally owned and operated coffee shop serving freshly brewed coffee and freshly baked goods. Also serving breakfast, lunch, and dinner all day.",
       "Tag1": "Coffee",
       "Tag2": "",
-      "Photo": "Placeholder"
+      "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
       "_id": 79,
@@ -734,7 +734,7 @@
       "Description": "Vida Coffee is an independently owned and operated coffee shop conveniently located across the street from Student Rec Center and Virginia Ave parking garage. Vida Coffee offers free wifi and a relaxing place for students to chill and study as well as enjoy delicious coffee.",
       "Tag1": "Coffee",
       "Tag2": "",
-      "Photo": "Placeholder"
+      "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
       "_id": 82,
@@ -744,7 +744,7 @@
       "Description": "Fretboard Coffee is a specialty coffee shop that also offers delivery and coffee subscriptions.",
       "Tag1": "Coffee",
       "Tag2": "",
-      "Photo": "Placeholder"
+      "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
       "_id": 83,
@@ -754,7 +754,7 @@
       "Description": "The Grind Coffee House offers a study bar and lounge space with free wifi for students to get away from their usual study zones and enjoy a cup of coffee, smoothie, or one of their various lunch options.",
       "Tag1": "Coffee",
       "Tag2": "",
-      "Photo": "Placeholder"
+      "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
       "_id": 84,
@@ -764,7 +764,7 @@
       "Description": "La Calle 8 is a vibrant and cozy coffee shop located in the heart of downtown Columbia where customers can enjoy a fine cup of coffee or a light sandwich.",
       "Tag1": "Coffee",
       "Tag2": "",
-      "Photo": "Placeholder"
+      "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
       "_id": 85,
@@ -774,7 +774,7 @@
       "Description": "Acola coffee is a locally owned and operated coffee shop located in the North Village art district of Downtown Columbia. Acola serves coffee produced by Onyx coffee lab. While they do not currently have space to study and relax, they plan to expand soon.",
       "Tag1": "Coffee",
       "Tag2": "",
-      "Photo": "Placeholder"
+      "Photo": "../Views/FoodImg/Placeholder.png"
   },
   {
       "_id": 86,
@@ -784,6 +784,6 @@
       "Description": "Freshly brew bubble teas, smoothies, slushes, fruit teas, coffee, and banh mi sandwiches.",
       "Tag1": "Cafe",
       "Tag2": "",
-      "Photo": "Placeholder"
+      "Photo": "../Views/FoodImg/Placeholder.png"
   }
   ]
