@@ -70,34 +70,28 @@ background-size: cover; background-position: center; background-attachment: fixe
             </p>
             <p>&nbsp;</p>
             <p>Want to vote for your favorite restaurant? Know a place that we missed?</p>
-            <div style="text-align: center;">
-                Click <div class="dropdown">
-                    <span class="white-box" onclick="toggleForm()">here</span>
-                    <div class="dropdown-content" id="formContainer">
-                        <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLScNpYgwPcYlQ5XPNsRqIhXfvkfRz5f9BCE0pEhfJBDQIeYxbQ/viewform?embedded=true"
-                            width="375" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                    </div>
-                </div>
-                to let us know?
-            </div>
+<div style="text-align: center;">
+    Click <div class="dropdown">
+        <span class="white-box" onclick="toggleForm()">here</span>
+        <div class="dropdown-content" id="formContainer">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNpYgwPcYlQ5XPNsRqIhXfvkfRz5f9BCE0pEhfJBDQIeYxbQ/viewform?embedded=true" width="375" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+    to let us know?
+</div>
 
-            <script>
-                function toggleForm() {
-                    var formContainer = document.getElementById("formContainer");
-                    if (formContainer.style.display === "block") {
-                        formContainer.style.display = "none";
-                    } else {
-                        formContainer.style.display = "block";
-                    }
-                }
-            </script>
+<script>
+    function toggleForm() {
+        var formContainer = document.getElementById("formContainer");
+        if (formContainer.style.display === "block") {
+            formContainer.style.display = "none";
+        } else {
+            formContainer.style.display = "block";
+        }
+    }
+</script>
         </section>
-        <section class="category-section">
-            <div class="search-container">
-                <input type="search" id="searchInput" placeholder="Search..." oninput="performSearch()">
-            </div>
-        </section>
+        
 
         <!-- Food and Drink Section -->
         <!-- Food and Drink - Top 3 Spots -->
@@ -105,6 +99,15 @@ background-size: cover; background-position: center; background-attachment: fixe
             <h2 class="category-title">Top 3 Spots</h2>
             <div class="category-listing" id="top-spots-listing">
                 <!-- Top 3 spots will be injected here -->
+            </div>
+        </section>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        
+        <section class="category-section">
+            <div class="search-container">
+                <input type="search" id="searchInput" placeholder="Search..." oninput="performSearch()">
             </div>
         </section>
 
@@ -160,7 +163,7 @@ background-size: cover; background-position: center; background-attachment: fixe
                 `;
                 listingContainer.appendChild(itemDiv);
             });
-        }
+            }
 
         function populateAllFoodDrinks(data) {
             const listingContainer = document.getElementById('all-food-drink-listing');
