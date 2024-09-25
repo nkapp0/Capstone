@@ -8,5 +8,7 @@ Welcome to the Mizzou 101 Website project repository. This website is designed t
 - Listings of food and drink venues, clubs, and student services
 - Information about parking and outdoor activities
 - Responsive design for optimal viewing on all devices
+- Database Hosted Through MongoDB, containing all Locations/Activity Information and Photography
+
 # Capstone
-This is my Senior Year Capstone Project, I completed this with a team of 5 in which I acted as Team lead, Frontend and Design. I had came up with th idea for this project and wanted to try to create a free access website for students to get a lot of hard to find details that all students wish they knew before their freshman year.
+This is my Senior Year Capstone Project, which I completed with a team of five. I served as the team lead, front-end developer, and designer. I conceived the idea for this project intending to create a free-access website that provides students with hard-to-find information—details that every student wishes they had before their freshman year.
